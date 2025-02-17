@@ -1,4 +1,4 @@
-def add_matrices(A, B):
+def test_add_matrices(A, B):
     rows = len(A)
     cols = len(A[0])
     
