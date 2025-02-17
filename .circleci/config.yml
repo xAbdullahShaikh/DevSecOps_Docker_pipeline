@@ -20,12 +20,12 @@ jobs:
       - checkout
       - run:
           name: Build Docker Image
-          command: docker build -t saadqamar/circleci-devsecops-image .
+          command: docker build -t codenameab/devsecops .
       - run:
           name: Push Docker Image to Docker Hub
           command: |
             echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-            docker push codenameab/circleci-devsecops-image
+            docker push codenameab/devsecops
 
 workflows:
   version: 2
