@@ -1,4 +1,4 @@
-from src.A1 import test_add_matrices
+from src.assignment1 import test_add_matrices
 
 
 # Example Usage
