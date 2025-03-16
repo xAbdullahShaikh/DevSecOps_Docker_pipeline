@@ -1,17 +1,10 @@
-FROM python:3.10
+FROM python:3.10-slim
 
-# Set working directory
+RUN adduser --disabled-password appuser
 WORKDIR /app
-
-# Copy and install dependencies
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+USER appuser
 
-# Copy the rest of the app
-COPY . /app
-
-# Expose the application port
-
-
-# Command to run the application
-CMD ["pytest"]
+CMD ["python", "app.py"]
